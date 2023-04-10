@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin-Bereich</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin-Bereich</h1>
+        <div class="manage-content">
+            <p><a href="{{ url_for('add_game_key') }}">Gamekeys hinzufügen</a></p>
+			<p><a href="{{ url_for('added_games') }}">Hinzugefügte Spiele anzeigen</a></p>
+            <p><a href="{{ url_for('manage_one_time_keys') }}">Einmalige Schlüssel verwalten</a></p>
+			<p><a href="{{ url_for('index') }}">Zurück zur Startseite</a></p>
+			<p><a href="{{ url_for('logout') }}">Abmelden</a></p>
+        </div>
+    </div>
+</body>
+</html>

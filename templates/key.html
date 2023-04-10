@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Gamekey erfolgreich angefordert</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<style>
+        .btn-copy {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+            transition: background-color 0.3s, border-color 0.3s;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+        }
+        .btn-copy::after {
+            display: none;
+        }
+        .btn-copy.copied {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .btn-copy.copied::after {
+            display: inline;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <div class="container">
+        <h1>Gamekey erfolgreich angefordert</h1>
+        <div class="success-content">
+            <h2>Herzlichen Glückwunsch!</h2>
+            <p>Dein Gamekey für {{ game_name }} lautet:</p>
+            <p class="success" id="game-key">{{ game_key }}</p>
+            <button class="btn-copy" id="copy-btn" onclick="copyGameKey()">Kopieren</button>
+            <p>Viel Spaß beim Spielen!</p> 
+        </div>
+        <p><a href="{{ url_for('index') }}">Zurück zur Startseite</a></p>
+    </div>
+    <script>
+        function copyGameKey() {
+            const gameKey = document.getElementById('game-key');
+            const copyBtn = document.getElementById('copy-btn');
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(gameKey);
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand('copy');
+            selection.removeAllRanges();
+
+            copyBtn.classList.add('copied');
+            setTimeout(() => copyBtn.classList.remove('copied'), 3000);
+        }
+    </script>
+</body>
+</html>

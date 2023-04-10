@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Gamekeys hinzufügen</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gamekeys hinzufügen</h1>
+        <div class="manage-content">
+            <form action="/add_game_keys" method="POST">
+                <div id="gamekey-entries">
+                    <div class="gamekey-entry">
+                        <label for="game_names">Spielname:</label>
+                        <input type="text" name="game_names[]" required>
+                        <br>
+                        <label for="game_keys">Gamekey:</label>
+                        <input type="text" name="game_keys[]" required>
+                    </div>
+                </div>
+                <button type="button" class="submit-button" onclick="addEntry()">Weiteres Spiel hinzufügen</button>
+				<br><br>
+				<button type="submit" class="submit-button">Gamekeys hinzufügen</button>
+            </form>
+            <script>
+                function addEntry() {
+                    const entry = document.createElement("div");
+                    entry.classList.add("gamekey-entry");
+                    entry.innerHTML = `
+                        <label for="game_names">Spielname:</label>
+                        <input type="text" name="game_names[]" required>
+                        <br>
+                        <label for="game_keys">Gamekey:</label>
+                        <input type="text" name="game_keys[]" required>
+                    `;
+                    document.getElementById("gamekey-entries").appendChild(entry);
+                }
+            </script>
+        </div>
+		<p><a href="{{ url_for('admin') }}">Admin-Bereich</a></p>
+    </div>
+</body>
+</html>

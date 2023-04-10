@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Steam Game Keys</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Steam Game Keys</h1>
+        <div class="index-content">
+            <h2>Wähle ein Spiel und gib deinen einmaligen Schlüssel ein:</h2>
+            <form action="/claim_key" method="POST">
+                <label for="game_name">Wähle ein Spiel:</label>
+                <select id="game_name" name="game_name">
+                    {% for game in games %}
+                    <option value="{{ game.game_name }}">{{ game.game_name }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <label for="one_time_key">Gib deinen einmaligen Schlüssel ein:</label>
+                <input type="text" id="one_time_key" name="one_time_key" required>
+                <br>
+                <input type="submit" class="submit-button" value="Gamekey anfordern">
+            </form>
+        </div>
+        <p><a href="{{ url_for('admin') }}">Admin-Bereich</a></p>
+    </div>
+</body>
+</html>

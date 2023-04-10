@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hinzugefügte Spiele</title>
+    <meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Hinzugefügte Spiele</h1>
+        <div class="manage-content">
+			<h2>Steam Game Keys Verwalten</h2>
+			<form action="/delete_used_gamekeys" method="POST">
+				<button type="submit" class="submit-button">Verwendete Steam Keys löschen</button>
+			</form>
+			<br>
+			<form action="/add_game_key" method="GET">
+				<button type="submit" class="submit-button">Steam Keys hinzufügen</button>
+			</form>
+			<br>
+            <h2>Liste der Spiele</h2>
+            {% if games %}
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>Spielname</th>
+                    <th>Gamekey</th>
+					<th>Ausgegeben</th>
+					<th>Status ändern</th>
+					<th>Löschen</th>
+                </tr>
+                {% for game in games %}
+                <tr>
+                    <td id="game-{{ game.id }}">{{ game.id }}</td>
+                    <td>{{ game.game_name }}</td>
+                    <td>{{ game.key }}</td>
+					<td>{{ 'Ja' if game.used else 'Nein' }}</td>
+					<td>
+						<form action="/update_game_status/{{ game.id }}" method="POST" style="display:inline;">
+							<button type="submit">{{ 'Als unbenutzt markieren' if game.used else 'Als benutzt markieren' }}</button>
+						</form>
+					</td>
+					<td>
+						<form action="/delete_game/{{ game.id }}" method="POST" style="display:inline;">
+							<button type="submit">Löschen</button>
+						</form>
+					</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p>Es wurden noch keine Spiele hinzugefügt.</p>
+            {% endif %}
+        </div>
+        <p><a href="{{ url_for('admin') }}">Admin-Bereich</a></p>
+    </div>
+</body>
+</html>

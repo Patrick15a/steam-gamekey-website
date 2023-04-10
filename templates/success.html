@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Aktion erfolgreich</title>
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<meta http-equiv="refresh" content="3;url={{ url_for('added_games') }}" />
+	<<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<style>
+        .btn-copy {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+            transition: background-color 0.3s, border-color 0.3s;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+        }
+        .btn-copy::after {
+            display: none;
+        }
+        .btn-copy.copied {
+            background-color: #5cb85c;
+            border-color: #5cb85c;
+        }
+        .btn-copy.copied::after {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aktion Erfolgreich</h1>
+        <div class="success-content">
+            <h2>Aktion wurde erfolgreich durchgeführt.</h2>
+            <p class="success">{{ message }}</p>
+        </div>
+    </div>
+</body>
+</html>
