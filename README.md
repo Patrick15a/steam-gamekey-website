@@ -10,6 +10,7 @@ Eine einfache Webanwendung zum Verwalten und Verteilen von Gamekeys.
 
 ## Demo Server
 Unter https://demokeys.myfilehost.de habe ich einen Demo Server bereitgestellt. Mit dem Passwort `Admin` können dort alle Funktionen getestet werden.
+Die Datenbank des Demo Servers wird Stündlich zurückgesetzt.
 
 ## Installation und Ausführung
 
