@@ -19,7 +19,7 @@ Die Datenbank des Demo Servers wird Stündlich zurückgesetzt.
 2. Klonen Sie das Repository:
 ```
 git clone https://github.com/patrick15a/steam-gamekey-website.git
-cd steam-gamekey-website´
+cd steam-gamekey-website
 ```
 
 3. Erstellen Sie eine virtuelle Umgebung und installieren Sie die Abhängigkeiten:
