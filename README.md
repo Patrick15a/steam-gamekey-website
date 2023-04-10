@@ -29,7 +29,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Führen Sie die Anwendung aus:
+4. Erstellen Sie ein Passwort Hash
+Gehen Sie auf https://bcrypt-generator.com/ , gebe bei Encrypt ein Passwort ein und klicke auf Encrypt.
+Anschließend kopiere den angezeigten Hash und ersetze den Inhalt von `hashed_password=` ihn in der app.py wie folgt.
+```
+hashed_password = b'Hier Hash einfügen'
+```
+Alternativ können Sie der Anleitung der Kommentare in der app.py folgen.
+
+5. Ändern Sie den Secret Key
+Gehen Sie erneut in die app.py und ändern sie dort den Secret Key.
+Der Secret Key sollte einmalig und sicher sein. Er wird zur Verschlüsselung der Login Session verwendet.
+Der Secret Key muss sich nicht gemerkt werden.
+
+6. Führen Sie die Anwendung aus:
 ```
 python app.py
 ```
