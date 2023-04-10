@@ -3,8 +3,8 @@
 <head>
     <title>Einmalige Schlüssel verwalten</title>
     <meta charset="UTF-8">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -16,33 +16,33 @@
                 <input type="submit" class="submit-button" value="Einmaligen Schlüssel generieren">
             </form>
             <h3>Liste der generierten Schlüssel:</h3>
-			{% if one_time_keys %}
-			<table class="table">
-				<tr>
-					<th>Schlüssel</th>
-					<th>Verwendet</th>
-					<th>Löschen</th>
-				</tr>
-				{% for one_time_key in one_time_keys %}
-				<tr>
-					<td>{{ one_time_key.key }}</td>
-					<td>{{ 'Ja' if one_time_key.used else 'Nein' }}</td>
-					<td>
-						<form action="/delete_one_time_key/{{ one_time_key.id }}" method="POST" style="display:inline;">
-							<button type="submit">Löschen</button>
-						</form>
-					</td>
-				</tr>
-				{% endfor %}
-			</table>
-			{% else %}
-			<p>Es wurden noch keine Schlüssel generiert.</p>
+            {% if one_time_keys %}
+            <table class="table">
+                <tr>
+                    <th>Schlüssel</th>
+                    <th>Verwendet</th>
+                    <th>Löschen</th>
+                </tr>
+                {% for one_time_key in one_time_keys %}
+                <tr>
+                    <td>{{ one_time_key.key }}</td>
+                    <td>{{ 'Ja' if one_time_key.used else 'Nein' }}</td>
+                    <td>
+                        <form action="/delete_one_time_key/{{ one_time_key.id }}" method="POST" style="display:inline;">
+                            <button type="submit">Löschen</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p>Es wurden noch keine Schlüssel generiert.</p>
             {% endif %}
-			<h2>Verwendete Schlüssel entfernen</h2>
-			<form action="/remove_used_keys" method="POST">
-				<input type="submit" class="submit-button" value="Verwendete Schlüssel entfernen">
-			</form>
-		</div>
+            <h2>Verwendete Schlüssel entfernen</h2>
+            <form action="/remove_used_keys" method="POST">
+                <input type="submit" class="submit-button" value="Verwendete Schlüssel entfernen">
+            </form>
+        </div>
         <p><a href="{{ url_for('admin') }}">Admin-Bereich</a></p>
     </div>
 </body>
