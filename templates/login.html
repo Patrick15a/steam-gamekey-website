@@ -3,21 +3,21 @@
 <head>
     <title>Login</title>
     <meta charset="UTF-8">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Login</h1>
-		<div class="manage-content">
-			<form action="/login" method="POST">
-				<label for="password">Passwort:</label>
-				<input type="password" name="password" required>
-				<br><br>
-				<button type="submit" class="submit-button">Anmelden</button>
-			</form>
-		</div>
+        <div class="manage-content">
+            <form action="/login" method="POST">
+                <label for="password">Passwort:</label>
+                <input type="password" name="password" required>
+                <br><br>
+                <button type="submit" class="submit-button">Anmelden</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
