@@ -41,7 +41,7 @@ python app.py
 Die Anwendung ist jetzt unter http://127.0.0.1:5000 erreichbar.
 Du kannst den Port in der app.py in der letzten Zeile ändern.
 ```
-app.run(debug=True, port=5123)
+app.run(debug=True, port=5000)
 ```
 
 
