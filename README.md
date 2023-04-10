@@ -4,10 +4,12 @@ Eine einfache Webanwendung zum Verwalten und Verteilen von Gamekeys.
 
 ## Funktionen
 
-- Benutzer können einen Steam Gamekey mit ihrem einmaligen Schlüssel über die Startseite anfordern
-- (Admin) Hinzufügen und Verwalten von Gamekeys
+- Benutzer können einen Steam Game Key mit ihrem einmaligen Schlüssel über die Startseite anfordern
+- (Admin) Hinzufügen und Verwalten von Stean Game Keys
 - (Admin) Generieren und Verwalten von einmaligen Schlüsseln
-- (Admin) Anzeige der in der Datenbank hinzugefügen Steam Gamekeys
+
+## Demo Server
+Unter https://demokeys.myfilehost.de habe ich einen Demo Server bereitgestellt. Mit dem Passwort `Admin` können dort alle Funktionen getestet werden.
 
 ## Installation und Ausführung
 
@@ -15,8 +17,8 @@ Eine einfache Webanwendung zum Verwalten und Verteilen von Gamekeys.
 
 2. Klonen Sie das Repository:
 ```
-git clone https://github.com/yourusername/gamekey-website.git
-cd gamekey-website´
+git clone https://github.com/patrick15a/steam-gamekey-website.git
+cd steam-gamekey-website´
 ```
 
 3. Erstellen Sie eine virtuelle Umgebung und installieren Sie die Abhängigkeiten:
@@ -37,6 +39,14 @@ python app.py
 ```
 
 Die Anwendung ist jetzt unter http://127.0.0.1:5000 erreichbar.
+Du kannst den Port in der app.py in der letzten Zeile ändern.
+```
+app.run(debug=True, port=5123)
+```
+
 
 ## Anpassung
 Um die Anwendung an Ihre Bedürfnisse anzupassen, können Sie den Code in `app.py` und die HTML-Vorlagen im `templates`-Ordner ändern. Das Styling der Anwendung kann in der `static/styles.css`-Datei angepasst werden.
+
+## Anmerkung
+Ich bin Hobby Entwickler. Der Code kann Fehler und unnötige Zeilen enthalten.
