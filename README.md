@@ -4,7 +4,7 @@ Eine einfache Webanwendung zum Verwalten und Verteilen von Gamekeys.
 
 ## Funktionen
 
-- Benutzer können einen Steam Game Key mit ihrem einmaligen Schlüssel über die Startseite anfordern
+- Anfordern eines Steam Game Key aus einer Liste mittels einmaligen Schlüssel
 - (Admin) Hinzufügen und Verwalten von Stean Game Keys
 - (Admin) Generieren und Verwalten von einmaligen Schlüsseln
 
