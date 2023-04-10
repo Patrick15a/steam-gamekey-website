@@ -35,7 +35,7 @@ Anschließend kopiere den angezeigten Hash und ersetze den Inhalt von `hashed_pa
 ```
 hashed_password = b'Hier Hash einfügen'
 ```
-Alternativ können Sie der Anleitung der Kommentare in der app.py folgen.
+
 
 5. Ändern Sie den Secret Key
 Gehen Sie erneut in die app.py und ändern sie dort den Secret Key.
@@ -50,7 +50,7 @@ python app.py
 Die Anwendung ist jetzt unter http://127.0.0.1:5000 erreichbar.
 Du kannst den Port in der app.py in der letzten Zeile ändern.
 ```
-app.run(debug=True, port=5000)
+app.run(debug=False, port=5000)
 ```
 
 
