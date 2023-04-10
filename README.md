@@ -29,12 +29,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Initialisieren Sie die Datenbank:
-```
-python init_db.py
-```
-
-5. Führen Sie die Anwendung aus:
+4. Führen Sie die Anwendung aus:
 ```
 python app.py
 ```
