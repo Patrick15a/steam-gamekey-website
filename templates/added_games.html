@@ -13,6 +13,7 @@
         <div class="manage-content">
             <h2>Steam Game Keys Verwalten</h2>
             <form action="/delete_used_gamekeys" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <button type="submit" class="submit-button">Verwendete Steam Keys löschen</button>
             </form>
             <br>
@@ -22,7 +23,7 @@
             <br>
             <h2>Liste der Spiele</h2>
             {% if games %}
-            <table class="table">
+            <table class="table" id="games-table">
                 <tr>
                     <th>ID</th>
                     <th>Spielname</th>
@@ -39,11 +40,13 @@
                     <td>{{ 'Ja' if game.used else 'Nein' }}</td>
                     <td>
                         <form action="/update_game_status/{{ game.id }}" method="POST" style="display:inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit">{{ 'Als unbenutzt markieren' if game.used else 'Als benutzt markieren' }}</button>
                         </form>
                     </td>
                     <td>
                         <form action="/delete_game/{{ game.id }}" method="POST" style="display:inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit">Löschen</button>
                         </form>
                     </td>

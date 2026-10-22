@@ -12,6 +12,7 @@
         <h1>Gamekeys hinzufügen</h1>
         <div class="manage-content">
             <form action="/add_game_keys" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div id="gamekey-entries">
                     <div class="gamekey-entry">
                         <label for="game_names">Spielname:</label>

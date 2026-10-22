@@ -15,7 +15,10 @@
             <p><a href="{{ url_for('added_games') }}">Hinzugefügte Spiele anzeigen</a></p>
             <p><a href="{{ url_for('manage_one_time_keys') }}">Einmalige Schlüssel verwalten</a></p>
             <p><a href="{{ url_for('index') }}">Zurück zur Startseite</a></p>
-            <p><a href="{{ url_for('logout') }}">Abmelden</a></p>
+            <form action="{{ url_for('logout') }}" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <button type="submit" class="submit-button">Abmelden</button>
+            </form>
         </div>
     </div>
 </body>

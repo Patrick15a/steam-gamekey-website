@@ -12,6 +12,7 @@
         <h1>Login</h1>
         <div class="manage-content">
             <form action="/login" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <label for="password">Passwort:</label>
                 <input type="password" name="password" required>
                 <br><br>

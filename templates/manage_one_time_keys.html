@@ -13,6 +13,7 @@
         <div class="manage-content">
             <h2>Einmaligen Schlüssel generieren</h2>
             <form action="/add_one_time_key" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input type="submit" class="submit-button" value="Einmaligen Schlüssel generieren">
             </form>
             <h3>Liste der generierten Schlüssel:</h3>
@@ -29,6 +30,7 @@
                     <td>{{ 'Ja' if one_time_key.used else 'Nein' }}</td>
                     <td>
                         <form action="/delete_one_time_key/{{ one_time_key.id }}" method="POST" style="display:inline;">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                             <button type="submit">Löschen</button>
                         </form>
                     </td>
@@ -40,6 +42,7 @@
             {% endif %}
             <h2>Verwendete Schlüssel entfernen</h2>
             <form action="/remove_used_keys" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <input type="submit" class="submit-button" value="Verwendete Schlüssel entfernen">
             </form>
         </div>

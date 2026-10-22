@@ -13,6 +13,7 @@
         <div class="index-content">
             <h2>Wähle ein Spiel und gib deinen einmaligen Schlüssel ein:</h2>
             <form action="/claim_key" method="POST">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <label for="game_name">Wähle ein Spiel:</label>
                 <select id="game_name" name="game_name">
                     {% for game in games %}
